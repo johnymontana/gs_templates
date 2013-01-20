@@ -73,9 +73,9 @@
 									<section>
 										<h3>{{ sidebar_title }}</h3>
 										<p>{{ sidebar_text }}</p>
-										<footer>
-											<a href="#" class="button button-icon button-icon-info">Find out more</a>
-										</footer>
+										{#  <footer> #}
+										{# 	<a href="#" class="button button-icon button-icon-info">Find out more</a>  #}
+										{#  </footer> #}
 									</section>
 
 
@@ -88,22 +88,10 @@
 								<div id="content">
 									<article class="last">
 
-										<h2>{{ main_title }}</h2>
+										<h2>You just rented {{ gear_to_rent.name }}</h2>
 
-										<p>{{ main_subtitle }}</p>
-
-                                        <ul>
-                                        {%  for gear in gear_list %}
-                                          <li><h3><a href="/search_gear/{{ gear.id }}">{{ gear.name }}</a></h3></li>
-                                            <ul>
-                                                <li>{{ gear.type }}</li>
-                                                <li>{{ gear.description }}</li>
-                                                <li>{{ gear.user }}</li>
-                                            </ul>
-
-
-                                        {%  endfor %}
-                                        </ul>
+										<p>An email confirmation is on its way!</p>
+                                        <p>Thanks for using GearSurf!</p>
 
 									</article>
 								</div>
