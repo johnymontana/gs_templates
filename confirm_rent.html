@@ -72,17 +72,11 @@
 									<article class="last">
 
 										<p>{{ main_subtitle }}</p>
-                                        <form action="/post_gear/" method="post" enctype="multipart/form-data">
+                                        <form action="/confirm_rent/" method="post" enctype="multipart/form-data">
                                             {% csrf_token %}
                                             <p>{{ form.non_field_errors }}</p>
-                                            <p>{{ form.name.label_tag }} {{ form.name.errors }} {{ form.name}}</p>
-                                            <p>{{ form.type.label_tag }} {{ form.type.errors }} {{ form.type}}</p>
-                                            <p>{{ form.description.label_tag }} {{ form.description.errors }} {{ form.description}}</p>
-                                            <p>{{ form.dayRentalPrice.label_tag }} {{ form.dayRentalPrice.errors }} {{ form.dayRentalPrice}}</p>
-                                            <p>{{ form.docfile.label_tag }} {{ form.docfile.errors }} {{ form.docfile }} </p>
-                                            <p>{{ form.user.label_tag }} {{ form.user.errors }} {{ form.user}}</p>
-                                            <p>{{ form.userEmail.label_tag }} {{ form.userEmail.errors }} {{ form.userEmail}}</p>
-                                            <p><input type="submit" value="List gear!" /></p>
+                                            <p>{{ form.note.label_tag }} {{ form.note.errors }} {{ form.note}}</p>
+                                            <p><input type="submit" value="Rent!" /></p>
                                         </form>
 
 									</article>
