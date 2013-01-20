@@ -91,15 +91,20 @@
 										<h2>{{ main_title }}</h2>
 
 										<p>{{ main_subtitle }}</p>
-
+                                        {%  for cat in cat_list %}
+                                            | <a href="/search_cat/{{ cat }}/">{{ cat }}</a>
+                                        {%  endfor %}
                                         <ul>
                                         {%  for gear in gear_list %}
                                           <li><h3><a href="/search_gear/{{ gear.id }}">{{ gear.name }}</a></h3></li>
                                             <ul>
-                                                <li>{{ gear.type }}</li>
-                                                <li>{{ gear.description }}</li>
-                                                <li>{{ gear.user }}</li>
+                                                <li><strong>Category: </strong>{{ gear.type }}</li>
+                                                <li><strong>Description: </strong>{{ gear.description }}</li>
+                                                <li><strong>Posted by: </strong>{{ gear.user }}</li>
+                                                <li><strong>Daily Rental Fee: $</strong>{{ gear.dayRentalPrice }}</li>
+                                                <li><img src="{{ STATIC_URL }}gs/images/{{ gear.docfile }}" width=100></li>
                                             </ul>
+                                            <hr>
 
 
                                         {%  endfor %}
