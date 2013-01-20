@@ -91,7 +91,9 @@
 										<h2>{{ main_title }}</h2>
 
 										<p>{{ main_subtitle }}</p>
-
+                                        {%  for cat in cat_list %}
+                                            | <a href="/search_cat/{{ cat }}/">{{ cat }}</a>
+                                        {%  endfor %}
                                         <ul>
                                         {%  for gear in gear_list %}
                                           <li><h3><a href="/search_gear/{{ gear.id }}">{{ gear.name }}</a></h3></li>
@@ -99,6 +101,7 @@
                                                 <li>{{ gear.type }}</li>
                                                 <li>{{ gear.description }}</li>
                                                 <li>{{ gear.user }}</li>
+                                                <li><img src="{{ STATIC_URL }}gs/images/{{ gear.docfile }}"</li>
                                             </ul>
 
 
