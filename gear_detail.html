@@ -89,9 +89,11 @@
 									<article class="last">
 
 										<h2>{{ gear_item.name }}</h2>
-
-										<p>{{ gear_item.description }}</p>
-                                        <p>${{ gear_item.dayRentalPrice }}</p>
+                                        <p>Category: {{ gear_item.type }}</p>
+										<p>Description: {{ gear_item.description }}</p>
+                                        <p>Posted by: {{ gear_item.user }}</p>
+                                        <p>Daily Rental Fee: ${{ gear_item.dayRentalPrice }}</p>
+                                        <img src="{{ STATIC_URL }}gs/images/{{ gear_item.docfile }}" width=400>
 
                                         <p><a href="/confirm_rent/{{ gear_item.id }}" class="button button-icon button-icon-info">Rent this gear!</a></p>
 
