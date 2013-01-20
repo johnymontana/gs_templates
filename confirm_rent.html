@@ -72,6 +72,15 @@
 									<article class="last">
 
 										<h2>Are you sure you want to rent {{ gear_to_rent.name }}?</h2>
+                                        <p>
+                                            Gear: {{ gear_to_rent.name }}
+                                            <br>
+                                            Description: {{ gear_to_rent.description }}
+                                            <br>
+                                            Rental price per day: ${{ gear_to_rent.dayRentalPrice }}
+                                            <br>
+                                            Owner: {{ gear_to_rent.user }}
+                                        </p>
                                         <form action="/rented/" method="post" enctype="multipart/form-data">
                                             <input type="hidden" name="gear_id" value="{{ gear_to_rent.id }}">
                                             {% csrf_token %}
@@ -80,7 +89,10 @@
                                                 Write a note to the owner, make sure to say when and how long you want the gear, and when you want to pick it up:<br>
                                                 {{ form.note.errors }} {{ form.note}}
                                             </p>
-                                            <p><input type="submit" value="Rent!" /></p>
+                                            <p>
+                                                BOTH GEARSURF AND THE LENDER EXPRESSLY DISCLAIM ANY IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE OR OF ANY OTHER OBLIGATION ARISING BYOPERATION OF LAW OR OTHERWISE. IN ANY EVENT, RESPONSIBILITY FOR SPECIAL, INCIDENTAL AND CONSEQUENTIAL DAMAGES IS EXPRESSLY EXCLUDED.
+                                            </p>
+                                            <p><input class="button button-big button-icon button-icon-rarrow" type="submit" value="Rent!" /></p>
                                         </form>
 
 									</article>
