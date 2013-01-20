@@ -48,8 +48,8 @@
                                     <nav id="nav" class="mobileUI-site-nav">
                                         <ul>
                                             <li><a href="/gearswap/">Welcome</a></li>
-                                            <li><a href="/search_gear/">Search Gear</a></li>
-                                            <li class="current_page_item"><a href="/post_gear/">Post Gear</a></li>
+                                            <li class="current_page_item"><a href="/search_gear/">Search Gear</a></li>
+                                            <li ><a href="/post_gear/">Post Gear</a></li>
                                             <li><a href="/about/">About</a></li>
                                         </ul>
                                     </nav>
@@ -71,11 +71,15 @@
 								<div id="content">
 									<article class="last">
 
-										<p>{{ main_subtitle }}</p>
-                                        <form action="/confirm_rent/" method="post" enctype="multipart/form-data">
+										<h2>Are you sure you want to rent {{ gear_to_rent.name }}?</h2>
+                                        <form action="/rented/" method="post" enctype="multipart/form-data">
+                                            <input type="hidden" name="gear_id" value="{{ gear_to_rent.id }}">
                                             {% csrf_token %}
                                             <p>{{ form.non_field_errors }}</p>
-                                            <p>{{ form.note.label_tag }} {{ form.note.errors }} {{ form.note}}</p>
+                                            <p>
+                                                Write a note to the owner, make sure to say when and how long you want the gear, and when you want to pick it up:<br>
+                                                {{ form.note.errors }} {{ form.note}}
+                                            </p>
                                             <p><input type="submit" value="Rent!" /></p>
                                         </form>
 
